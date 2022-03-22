@@ -2,37 +2,581 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+BODY {
+  background-image: url(./assets/tlo_main.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.exampless {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  width: 100%;
+  padding: 10px 10px 10px 15px;
+  margin: 0 0 10px 0;
+  overflow: auto;
+  border: 1px solid #e5e5df;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.exampless.open {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  bottom: 100px;
+  right: 0;
+  z-index: 3;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/*                                                 Styles for Hello */
+
+.hello-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.hello-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1vw;
+  color: #fff;
+  padding: 1vw;
+  width: 80%;
+}
+
+.hello-text a {
+  width: 17%;
+}
+
+.hello-text>h1 {
+  margin: 0.5vw;
+
+}
+
+.hiText-Hi {
+  font-size: 4vw;
+  text-shadow: 10px 10px #000;
+}
+
+.hiText-rest {
+  font-size: 2vw;
+}
+
+.button_hello_div {
+  width: 15%;
+}
+
+.button_hello {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(243, 226, 55, 0.6);
+  width: 100%;
+  font-size: 2vw;
+  padding: 0.5vw;
+  border-radius: 1vw;
+}
+
+.button_hello:hover {
+  cursor: pointer;
+  animation: arrow 2s infinite;
+}
+
+.arrow {
+  height: 10%;
+  width: 1.5vw;
+}
+
+@keyframes arrow {
+  0% {
+    justify-content: end;
+    padding-right: 60%;
+  }
+
+  100% {
+    justify-content: end;
+    padding-right: 5%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/*                                                 Styles for Portfolio */
+
+
+.contener {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainPort {
+  width: 70vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1vw 1vw 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  margin-top: 8%;
+}
+
+.photoDes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2vw 0;
+  width: 100%;
+}
+
+.myPhoto {
+  transition: transform 1s;
+  border-radius: 1vw;
+  width: 37%;
+}
+
+.myPhoto:hover {
+  transform: scale(1.1);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(6, 5, 26, 0.1) 0%, rgba(92, 20, 20, 0.5) 10%, rgba(6, 5, 26, 0.7) 100%);
+  border-radius: 1vw;
+  color: #fff;
+  font-size: 1vw;
+  width: 30%;
+  padding: 3%;
+  transition: transform 1s;
+}
+
+.description:hover {
+  transform: scale(1.1);
+}
+
+.description p:last-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+.description h2 {
+  align-self: center;
+}
+
+.description hr {
+  width: 80%;
+}
+
+.desAnchor {
+  display: flex;
+  justify-content: center;
+  font-size: 3vw;
+  color: #fff;
+  text-decoration: none;
+}
+
+.CV {
+  padding: 2vw;
+  color: #fff;
+  font-size: 1vw;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+}
+
+.education>h1,
+.work>h1,
+.skills>h1 {
+  display: flex;
+  justify-content: center;
+}
+
+
+.li-list {
+  display: list-item;
+}
+
+.ul-list {
+  list-style-type: disc;
+  padding-left: 2vw;
+}
+
+.examples {
+  width: 70vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 3vw;
+  z-index: 1;
+}
+
+.examples>h1 {
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.examples-portfolio_title {
+  padding-top: 5vw;
+}
+
+.examples-main {
+  display: flex;
+  margin-bottom: 2vw;
+  padding: 1vw;
+  border-radius: 10px;
+}
+
+.examples-main:hover {
+  box-shadow: inset 0 0 2vw #304791;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.examples-photo {
+  width: 20vw;
+  margin-right: 3vw;
+  border-radius: 3% 20%;
+  border-style: solid;
+  border-width: 0.1vw;
+  border-color: #000;
+}
+
+.examples-photo:hover {
+  cursor: pointer;
+}
+
+.examples-app {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.examples-des {
+  width: 50%;
+}
+
+.examples-des h1 {
+  font-size: 2vw;
+}
+
+.examples-des h2 {
+  font-size: 1vw;
+}
+
+.git-button {
+  display: inline-block;
+  align-self: self-end;
+  text-align: center;
+  background-color: rgb(23, 32, 156);
+  padding: 1.5%;
+  width: 12%;
+  font-size: 1vw;
+  border-radius: 1vw;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0.3vw 0.3vw 0.3vw #000;
+}
+
+.git-button:active {
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+}
+
+
+/*                                                 Styles for Gallery */
+
+
+.hobby {
+  width: 100vw;
+  background-color: rgba(6, 5, 26, 0.9);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.hobby>h1 {
+  width: 100vw;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+}
+
+.hobby_div {
+  height: 13vw;
+  margin: 2vw;
+  position: relative;
+}
+
+.hobby-img {
+  height: 100%;
+}
+
+.hobby-des {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #1b2b5f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby_div:hover .hobby-des {
+  opacity: 0.9;
+}
+
+.hobby-text {
+  color: #fff;
+  font-size: 1vw;
+  width: 80%;
+}
+
+/*                                                 Styles for Contact */
+
+.contact {
+  padding: 5vw 0;
+}
+
+.contact h1 {
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.contact_field {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.contact_field h1 {
+  background-color: rgba(17, 27, 119, 0.6);
+  padding: 1vw 2.5vw;
+  border-radius: 1vw;
+  font-size: 2vw;
+  margin: 0 1vw;
+}
+
+.contact_field p {
+  position: absolute;
+  justify-self: center;
+  z-index: -1;
+  font-size: 3vw;
+  left: 44.2%;
+  top: -65%;
+}
+
+.contact input {
+  width: 20vw;
+  font-size: 1vw;
+  margin-bottom: 1vw;
+  padding: 0.3vw;
+}
+
+.contact button {
+  width: 10vw;
+  font-size: 1.5vw;
+  padding: 0.5vw;
+}
+
+/*                                                 Styles for Lost Page */
+
+.lostPage {
+  display: flex;
+  justify-content: center;
+}
+
+.lostPage_message {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  width: 35vw;
+  height: 40vh;
+  margin-top: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 2vw;
+  padding: 2vw;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 600px) {
+  .hello-text {
+    margin-bottom: 30%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hello-text a {
+    width: 22%;
+  }
+
+  .button_hello {
+    margin-top: 1vh;
+    width: 100%;
+    border-radius: 2vw;
+  }
+
+  .arrow {
+    height: auto;
+    width: 2vw;
+  }
+
+  .hiText-Hi {
+    font-size: 9vw;
+  }
+
+  .hiText-rest {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+
+  .mainPort {
+    width: 80vw;
+    margin-top: 5%;
+  }
+
+  .photoDes {
+    flex-direction: column;
+  }
+
+  .myPhoto {
+    width: 70%;
+  }
+
+  .description {
+    margin-top: 5%;
+    width: 90%;
+    font-size: 3vw;
+  }
+
+  .description a {
+    font-size: 5vw;
+  }
+
+  .CV h1 {
+    font-size: 5vw;
+  }
+
+  .CV ul {
+    font-size: 2vw;
+  }
+
+  .CV li {
+    font-size: 3vw;
+    margin-top: 1%;
+  }
+
+  .hobby {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hobby h1 {
+    font-size: 5vw;
+  }
+
+  .hobby_div {
+    display: flex;
+    justify-content: center;
+    height: 18vh;
+    width: 90%;
+  }
+
+  .hobby-img {
+    width: 100%;
+  }
+
+  .examples {
+    width: 80vw;
+  }
+
+  .examples h1 {
+    font-size: 4vw;
+  }
+
+  .examples-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  .examples-photo {
+    width: 60vw;
+  }
+
+  .examples-des {
+    width: auto;
+  }
+
+  .examples-des h1 {
+    font-size: 5vw;
+    text-align-last: center;
+  }
+
+  .examples-des h2 {
+    font-size: 3vw;
+  }
+
+  .git-button {
+    font-size: 100%;
+    width: auto;
+    padding: 2%;
+    align-self: center;
+  }
+
+  .contact_field {
+    flex-direction: column;
+  }
+
+  .contact_field h1 {
+    font-size: 4vw;
+    margin: auto;
+    margin-bottom: 5vw;
+    padding: 2vw 3vw;
+  }
+
+  .contact_field p {
+    font-size: 10vw;
+    left: 41%;
+    top: -15%;
+  }
+
+  .hobby-text {
+    font-size: 2.5vw;
   }
 }
